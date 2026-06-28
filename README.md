@@ -65,3 +65,49 @@ Application Assignments
         |
         v
 Lifecycle Testing and Audit Evidence
+```
+## Screenshots
+
+### Automatic Group Membership
+
+![Automatic Group Membership](screenshots/09-automatic-group-membership.png)
+
+### Mover Automation
+
+![Mover Automation](screenshots/10-mover-automation.png)
+
+### Leaver Group Membership
+
+![Leaver Group Membership](screenshots/11-leaver-group-membership.png)
+
+### User Deactivated
+
+![User Deactivated](screenshots/12-user-deactivated.png)
+
+## Design Decisions
+
+Detailed design decisions are documented in [`docs/design-decisions.md`](docs/design-decisions.md).
+
+Key decisions included:
+
+- Using group-based access instead of direct assignments
+- Reusing existing Okta attributes where possible
+- Creating enumerated attributes for consistency
+- Using Okta Expression Language for multi-condition rules
+- Separating business lifecycle status from Okta account status
+
+## Production Considerations
+
+In production, this design would integrate with an HR system such as Workday or SAP SuccessFactors as the authoritative identity source. Lifecycle events would trigger access changes in Okta and downstream applications.
+
+Audit logs would be forwarded to a SIEM such as Microsoft Sentinel for monitoring, investigation, and compliance reporting.
+
+Future improvements would include SCIM provisioning, access reviews, manager approvals, and privileged access governance.
+
+## Lessons Learned
+
+Lessons learned are documented in [`docs/lessons-learned.md`](docs/lessons-learned.md).
+
+## Resume Bullet
+
+Designed and implemented an end-to-end Okta Joiner-Mover-Leaver identity lifecycle solution using custom identity attributes, RBAC, ABAC, Okta Expression Language, automated group membership, application assignments, and deprovisioning to simulate enterprise identity governance.
