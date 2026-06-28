@@ -1,14 +1,39 @@
 # Okta Identity Lifecycle Management: Joiner-Mover-Leaver Automation
 
+## Executive Summary
+
+This project demonstrates an end-to-end Identity and Access Management lifecycle workflow using Okta. The lab simulates a common enterprise Joiner-Mover-Leaver process where user access is automatically assigned, modified, and removed based on identity attributes.
+
+The project uses Okta Universal Directory, custom profile attributes, groups, group rules, application assignments, and lifecycle state changes to demonstrate automated access governance.
+
 ## Business Problem
 
-Northwind Manufacturing needs a better way to manage employee access during the full identity lifecycle.
+Northwind Manufacturing is growing and needs a scalable way to manage employee access. IT currently handles access manually when employees are hired, transfer departments, or leave the company.
 
-Currently, IT manually handles access when users are hired, change departments, or leave the company. This creates risk because users may receive incorrect access, keep old permissions, or remain active after termination.
+Manual access management creates several risks:
+
+- Delayed onboarding
+- Incorrect application access
+- Overprivileged users
+- Stale access after department transfers
+- Active accounts after termination
+- Poor audit visibility
 
 ## Project Goal
 
-Build an Okta-based Joiner-Mover-Leaver workflow that uses user attributes, groups, group rules, and application assignments to automate access decisions.
+Build an Okta-based Joiner-Mover-Leaver workflow that uses identity attributes and group rules to automate access decisions.
+
+## Technologies Used
+
+- Okta Developer Tenant
+- Okta Universal Directory
+- Okta Groups
+- Okta Group Rules
+- Okta Expression Language
+- Okta Application Assignments
+- Okta System Log
+- GitHub
+- VS Code
 
 ## IAM Concepts Demonstrated
 
@@ -17,18 +42,26 @@ Build an Okta-based Joiner-Mover-Leaver workflow that uses user attributes, grou
 - Attribute-Based Access Control
 - Least privilege
 - Group-based application assignment
+- Automated provisioning logic
 - Deprovisioning
-- Audit validation through Okta System Log
+- Identity governance
+- Audit validation
 
-## Technologies Used
+## Architecture
 
-- Okta Developer Tenant
-- Okta Universal Directory
-- Okta Groups
-- Okta Group Rules
-- Okta Application Assignments
-- Okta System Log
+User profile attributes are used to drive group membership through Okta Group Rules. Application access is assigned to groups instead of directly to users.
 
-## Project Status
-
-In Progress
+```text
+User Profile Attributes
+        |
+        v
+Okta Group Rules
+        |
+        v
+IAM Security Groups
+        |
+        v
+Application Assignments
+        |
+        v
+Lifecycle Testing and Audit Evidence
