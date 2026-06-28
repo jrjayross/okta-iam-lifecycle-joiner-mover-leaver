@@ -1,0 +1,4 @@
+firstName,lastName,email,department,employmentType,lifecycleStatus,costCenter,division,organization
+Jordan,Smith,jordan.smith@northwind.local,Sales,Full-Time,Active,1001,Sales,Northwind Manufacturing
+Taylor,Brown,taylor.brown@northwind.local,IT,Full-Time,Active,2001,Technology,Northwind Manufacturing
+Casey,Lee,casey.lee@northwind.local,Sales,Contractor,Active,3001,Sales,Northwind Manufacturing
